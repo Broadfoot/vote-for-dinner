@@ -111,4 +111,44 @@
     });
 
 
+    /**
+     * TODO: Whenever a vote is added to the database, this anonymous
+     * callback function will be called. This function is also called
+     * for every vote in the votes database when the app is first loaded.
+     * 
+     * When a vote is added, add it to the DOM.
+     */
+    votesDatabaseReference.on('child_added', function(snapshot) {
+
+    });
+
+
+    /**
+     * TODO: Whenever a vote is changed, this anonymous callback function
+     * will be called.
+     * 
+     * When a vote is changed, update the DOM.
+     */
+    votesDatabaseReference.on('child_changed', function(snapshot) {
+        // userId will be unique for every user vote
+        var userId = snapshot.key;
+
+        // voteData will be the object that was saved when the vote was saved
+        var voteData = data.val();
+    });
+
+
+    /**
+     * TODO: Whenever a vote is removed from the database, this anonymous
+     * callback function will be called. If everything is working correctly,
+     * votes should be removed if a user or dinner is deleted.
+     * 
+     * When a vote is removed, remove it from the DOM.
+     */
+    votesDatabaseReference.on('child_removed', function(snapshot) {
+        // userId will be unique for every user vote
+        var userId = snapshot.key;
+    });
+
+
 })(window, document);
