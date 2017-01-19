@@ -46,6 +46,10 @@
 
    git@github.com:fe-101-sea-nov-15-2016/vote-for-dinner.git
 
+6. Make sure you can see the application in the Firebase Console:
+
+   https://firebase.google.com
+
 ## Development Guidelines
 
 Take a look at the project directory structure. Your changes will be made in
