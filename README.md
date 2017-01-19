@@ -21,6 +21,9 @@
   no blank names allowed, etc.)
 - Validation on new dinners options
 - Authentication on user removal (e.g., only a user may remove themselves)
+- The Material Design Lite framework has been included in the page.
+  Read this and incorporate elements to make things look nice:
+  https://getmdl.io/
 
 ## Development Environment Set Up
 
