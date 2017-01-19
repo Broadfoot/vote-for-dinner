@@ -59,6 +59,10 @@ Take a look at the project directory structure. Your changes will be made in
 the ```public``` directory. You can consider this the document root when the
 project is deployed.
 
+Take a look at the index.html. There is a ```script``` tag in the head that
+pulls in Firebase and configures the application. You will not need to
+modify this, but know that it is there.
+
 We will be using Firebase Hosting, which is a similar service to GitHub
 Pages in that it puts your files on the Internet and makes them
 available at a nice URL. This project will be available here:
