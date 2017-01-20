@@ -29,8 +29,9 @@
 
      document.getElementById("deleteuser")
              .addEventListener("click", function(event) {
-                alert("delete user button clicked");
-                // delete the line above and do real work
+               var button = document.getElementsById("userName")[0],
+              
+};
              });
 
 
