@@ -171,3 +171,11 @@
 
 
 })(window, document);
+
+var body = document.getElementsByTagName('body')[0];
+body.style.backgroundImage = 'url(http://images01.tastingtable.com/images/articles/2016_07/1400x1050-California-Cali-Food-Border-Grill-LA-Lupes-2-Locol.jpg)';
+
+
+
+
+
