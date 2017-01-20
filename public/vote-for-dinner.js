@@ -73,14 +73,22 @@
      *     var dinnerReference = dinnersDatabaseReference.push();
      *     dinnerReference.set(YOUR_DINNER_OBJECT_GOES_HERE);
      */
-
     document.getElementById("chooseDinner")
-			  .addEventListener("click", function(event)  {
-                      alert('dinner!');
-          // TODO: get the input from the user
+			.addEventListener("click", function(event)  {
+        // get the dinner input from the user
+        var dinnerInput = document.getElementById("dinner");
+        var dinnerName = dinnerInput.value;
+
+        // create a list item that will hold the dinner title
+        var dinnerListItem = document.createElement("li");
+        dinnerListItem.innerText = dinnerName;
+
+        // add the dinner element to the DOM
+        var parent = document.getElementById("dinnerChoice");
+        parent.appendChild(dinnerListItem);
+
           // TODO: add it to the database
-          // TODO: list it
-        });
+      });
 
     /**
      * TODO: Whenever a new dinner is added to the database, this anonymous
