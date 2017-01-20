@@ -29,9 +29,7 @@
 
      document.getElementById("deleteuser")
              .addEventListener("click", function(event) {
-               var button = document.getElementsById("userName")[0],
-              
-};
+               var button = document.getElementsById("userName")[0];
              });
 
 
@@ -159,10 +157,6 @@
      * When a vote is added, add it to the DOM.
      */
     votesDatabaseReference.on('child_added', function(snapshot) {
-<<<<<<< HEAD
-        //var voteItem = document.createElement('li');
-        //document.getElementById('votes').appendChild('voteItem');
-=======
         var userId = snapshot.key;
         var voteData = snapshot.val();
         var dinnerId = voteData.dinnerId;
@@ -172,7 +166,6 @@
         voteItem.innerText = userId + ' voted for ' + dinnerId;
 
         document.getElementById('votes').appendChild(voteItem);
->>>>>>> Votes
     });
 
 
