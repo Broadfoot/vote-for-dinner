@@ -159,8 +159,20 @@
      * When a vote is added, add it to the DOM.
      */
     votesDatabaseReference.on('child_added', function(snapshot) {
+<<<<<<< HEAD
         //var voteItem = document.createElement('li');
         //document.getElementById('votes').appendChild('voteItem');
+=======
+        var userId = snapshot.key;
+        var voteData = snapshot.val();
+        var dinnerId = voteData.dinnerId;
+
+        var voteItem = document.createElement('li');
+        voteItem.id = 'vote-' + userId;
+        voteItem.innerText = userId + ' voted for ' + dinnerId;
+
+        document.getElementById('votes').appendChild(voteItem);
+>>>>>>> Votes
     });
 
 
@@ -177,7 +189,8 @@
         // voteData will be the object that was saved when the vote was saved
         var voteData = data.val();
 
-        document.getElementById('votes/' + userId).innertext = userId + " voted for " + dinnerId
+
+        document.getElementById('vote-' + userId).innertext = userId + " voted for " + dinnerId;
 
     });
 
@@ -192,8 +205,18 @@
     votesDatabaseReference.on('child_removed', function(snapshot) {
         // userId will be unique for every user vote
         var userId = snapshot.key;
-        document.getElementById('votes/' + userId).remove();
+
+        document.getElementById('vote-' + userId).remove();
+
     });
 
 
 })(window, document);
+
+var body = document.getElementsByTagName('body')[0];
+body.style.backgroundImage = 'url(http://images01.tastingtable.com/images/articles/2016_07/1400x1050-California-Cali-Food-Border-Grill-LA-Lupes-2-Locol.jpg)';
+
+
+
+
+
