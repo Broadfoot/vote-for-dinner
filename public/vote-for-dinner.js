@@ -76,7 +76,9 @@
         var parent = document.getElementById("dinnerChoice");
         parent.appendChild(dinnerListItem);
 
-          // TODO: add it to the database
+        // add it to the database
+        var dinnerReference = dinnersDatabaseReference.push();
+        dinnerReference.set({dinnerName: dinnerName});
       });
 
     /**
