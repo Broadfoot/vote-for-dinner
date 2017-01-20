@@ -75,17 +75,6 @@
      */
     document.getElementById("chooseDinner")
 			.addEventListener("click", function(event)  {
-        // get the dinner input from the user
-        var dinnerInput = document.getElementById("dinner");
-        var dinnerName = dinnerInput.value;
-
-        // create a list item that will hold the dinner title
-        var dinnerListItem = document.createElement("li");
-        dinnerListItem.innerText = dinnerName;
-
-        // add the dinner element to the DOM
-        var parent = document.getElementById("dinnerChoice");
-        parent.appendChild(dinnerListItem);
 
         // add it to the database
         var dinnerReference = dinnersDatabaseReference.push();
@@ -124,6 +113,21 @@
         // dinnerData will be the YOUR_DINNER_OBJECT_GOES_HERE object that was
         // saved when the dinner was added
         var dinnerData = snapshot.val();
+
+        // get the dinner input from the user
+        var dinnerInput = document.getElementById("dinner");
+        var dinnerName = dinnerInput.value;
+
+        // create a list item that will hold the dinner title
+        var dinnerListItem = document.createElement("li");
+        dinnerListItem.innerText = dinnerName;
+
+        // add the dinner element to the DOM
+        var parent = document.getElementById("dinnerChoice");
+        parent.appendChild(dinnerListItem);
+
+        // give the li an id so it can be reference later
+        dinnerListItem.id = "dinner-" + dinnerReference.key;
     });
 
 
@@ -147,8 +151,8 @@
      * When a vote is added, add it to the DOM.
      */
     votesDatabaseReference.on('child_added', function(snapshot) {
-        var voteItem = createElement('li');
-        document.getElementById('votes').appendChild('voteItem');
+        //var voteItem = document.createElement('li');
+        //document.getElementById('votes').appendChild('voteItem');
     });
 
 
