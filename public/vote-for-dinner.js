@@ -63,6 +63,13 @@
      *     dinnerReference.set(YOUR_DINNER_OBJECT_GOES_HERE);
      */
 
+    document.getElementById("chooseDinner")
+			  .addEventListener("click", function(event)  {
+                      alert('dinner!');
+          // TODO: get the input from the user
+          // TODO: add it to the database
+          // TODO: list it
+        });
 
     /**
      * TODO: Whenever a new dinner is added to the database, this anonymous
