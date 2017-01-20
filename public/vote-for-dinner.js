@@ -119,7 +119,8 @@
      * When a vote is added, add it to the DOM.
      */
     votesDatabaseReference.on('child_added', function(snapshot) {
-
+        var voteItem = createElement('li');
+        document.getElementById('votes').appendChild('voteItem');
     });
 
 
@@ -135,6 +136,9 @@
 
         // voteData will be the object that was saved when the vote was saved
         var voteData = data.val();
+
+        document.getElementById('votes/' + userId).innertext = userId + " voted for " + dinnerId
+
     });
 
 
@@ -148,6 +152,7 @@
     votesDatabaseReference.on('child_removed', function(snapshot) {
         // userId will be unique for every user vote
         var userId = snapshot.key;
+        document.getElementById('votes/' + userId).remove();
     });
 
 
