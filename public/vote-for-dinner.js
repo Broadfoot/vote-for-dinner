@@ -16,9 +16,16 @@
      */
      document.getElementById("adduser")
              .addEventListener("click", function(event) {
-                alert("add user button clicked");
-                // delete the line above and do real work
+               var userName = document.getElementById("userName").value;
+
+               var userListItem = document.createElement("li");
+               userListItem.innerText = userName;
+
+               var userList = document.getElementById("users");
+               userList.appendChild(userListItem);
              });
+
+
 
      document.getElementById("deleteuser")
              .addEventListener("click", function(event) {
