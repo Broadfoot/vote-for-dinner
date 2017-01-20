@@ -81,14 +81,13 @@
      *     var dinnerReference = dinnersDatabaseReference.push();
      *     dinnerReference.set(YOUR_DINNER_OBJECT_GOES_HERE);
      */
-
     document.getElementById("chooseDinner")
-			  .addEventListener("click", function(event)  {
-                      alert('dinner!');
-          // TODO: get the input from the user
-          // TODO: add it to the database
-          // TODO: list it
-        });
+			.addEventListener("click", function(event)  {
+
+        // add it to the database
+        var dinnerReference = dinnersDatabaseReference.push();
+        dinnerReference.set({dinnerName: dinnerName});
+      });
 
     /**
      * TODO: Whenever a new dinner is added to the database, this anonymous
@@ -122,6 +121,21 @@
         // dinnerData will be the YOUR_DINNER_OBJECT_GOES_HERE object that was
         // saved when the dinner was added
         var dinnerData = snapshot.val();
+
+        // get the dinner input from the user
+        var dinnerInput = document.getElementById("dinner");
+        var dinnerName = dinnerInput.value;
+
+        // create a list item that will hold the dinner title
+        var dinnerListItem = document.createElement("li");
+        dinnerListItem.innerText = dinnerName;
+
+        // add the dinner element to the DOM
+        var parent = document.getElementById("dinnerChoice");
+        parent.appendChild(dinnerListItem);
+
+        // give the li an id so it can be reference later
+        dinnerListItem.id = "dinner-" + dinnerReference.key;
     });
 
 
@@ -145,7 +159,8 @@
      * When a vote is added, add it to the DOM.
      */
     votesDatabaseReference.on('child_added', function(snapshot) {
-
+        //var voteItem = document.createElement('li');
+        //document.getElementById('votes').appendChild('voteItem');
     });
 
 
@@ -161,6 +176,9 @@
 
         // voteData will be the object that was saved when the vote was saved
         var voteData = data.val();
+
+        document.getElementById('votes/' + userId).innertext = userId + " voted for " + dinnerId
+
     });
 
 
@@ -174,6 +192,7 @@
     votesDatabaseReference.on('child_removed', function(snapshot) {
         // userId will be unique for every user vote
         var userId = snapshot.key;
+        document.getElementById('votes/' + userId).remove();
     });
 
 
