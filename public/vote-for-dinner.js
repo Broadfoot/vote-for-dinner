@@ -4,8 +4,7 @@
     var usersDatabaseReference = firebase.database().ref('users');
     var dinnersDatabaseReference = firebase.database().ref('dinners');
     var votesDatabaseReference = firebase.database().ref('votes');
-
-
+ 
     /**
      * TODO: Add an event listener (and the corresponding HTML to the
      * index.html) so users can "register" with their name.
@@ -15,6 +14,18 @@
      *     var userReference = usersDatabaseReference.push();
      *     userReference.set(YOUR_USER_OBJECT_GOES_HERE);
      */
+     document.getElementById("adduser")
+             .addEventListener("click", function(event) {
+                alert("add user button clicked");
+                // delete the line above and do real work
+             });
+
+     document.getElementById("deleteuser")
+             .addEventListener("click", function(event) {
+                alert("delete user button clicked");
+                // delete the line above and do real work
+             });
+
 
 
     /**
