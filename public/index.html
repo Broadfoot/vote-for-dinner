@@ -27,31 +27,53 @@
     </script>
   </head>
   <body>
-    <h1>Vote for Dinner!</h1>
-    <div>
-      <div>
-        User Name: <input type="text" id="userName">
-        <button type="submit" id="adduser">Add</button>
-        <button type="submit" id="deleteuser">Delete</button> 
-      </div>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Vote For Dinner!</span>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div>
+            <h4>Users</h4>
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input id="userName" class="mdl-textfield__input" type="text">
+                <label for="userName" class="mdl-textfield__label">Username...</label>
+              </div>
+              <button id="addNewUser" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Register
+              </button>
+            </form>
+            <h5>Registered Users</h5>
+            <ul id="userList">
+            </ul>
+          </div>
+          <div>
+            <h4>Dinners</h4>
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input id="dinnerName" class="mdl-textfield__input" type="text">
+                <label for="dinnerName" class="mdl-textfield__label">Dinner option...</label>
+              </div>
+              <button id="addNewDinner" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Add
+              </button>
+            </form>
+            <h5>Dinner Options</h5>
+            <ul id="dinnerList">
+            </ul>
+          </div>
+          <div>
+            <h4>Votes</h4>
+            <ul id="voteList">
+            </ul>
+          </div>
+        </div>
+      </main>
     </div>
-    <!-- Dinner choices: --> 
-    <!-- Buttons -->
-    <!-- input text -->
-    <div>
-      Dinner:<input id="dinner" type="text"> <button id="chooseDinner" type="button">add</button>
-      <p id="output"></p>
-    </div>
-<<<<<<< HEAD
-    <ul id="users"></ul>
-    <ul id="dinnerChoice"></ul>
-=======
-    <div>
-       <button id="chooseDinner" type="button">add</button>
-     </div>
-     <ul id="votes">
-     </ul>
->>>>>>> Votes
-    <script src="/vote-for-dinner.js"></script>
+    <script src="vote-for-dinner.js"></script>
   </body>
 </html>
