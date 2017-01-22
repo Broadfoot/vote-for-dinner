@@ -24,15 +24,8 @@
                var userList = document.getElementById("users");
                userList.appendChild(userListItem);
              });
+          });
 
-
-
-     document.getElementById("deleteuser")
-             .addEventListener("click", function(event) {
-               var button = document.getElementsById("userName")[0],
-              
-};
-             });
 
 
 
